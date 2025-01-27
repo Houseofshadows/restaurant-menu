@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Maison - Restaurant Menu</title>
+    <style>
+        :root {
+            --primary-color: #2c1810;
+            --secondary-color: #8b4513;
+            --accent-color: #d4a762;
+            --background-color: #fdf6e9;
+            --text-color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: var(--background-color);
+        }
+
+        .menu-header {
+            text-align: center;
+            padding: 3rem 0;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                       url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0') center/cover;
+            color: white;
+        }
+
+        .menu-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .menu-section {
+            margin: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            display: inline-block;
+            padding: 0 2rem;
+            background: var(--background-color);
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--accent-color);
+            z-index: -1;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .menu-item-info {
+            padding: 1.5rem;
+        }
+
+        .menu-item-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .menu-item-title h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+
+        .price {
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .menu-item-desc {
+            color: var(--text-color);
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="menu-header">
+        <h1>La Maison</h1>
+        <p>Fine Dining Experience</p>
+    </header>
+
+    <div class="container">
+        <section class="menu-section">
+            <div class="section-title">
+                <h2>Appetizers</h2>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1541014741259-de529411b96a" alt="French Onion Soup">
+                    <div class="menu-item-info">
+                        <div class="menu-item-title">
+                            <h3>French Onion Soup</h3>
+                            <span class="price">$12</span>
+                        </div>
+                        <p class="menu-item-desc">Caramelized onions in rich beef broth, topped with crusty bread and melted Gruyère cheese</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1608897013039-887f21d8c804" alt="Escargot">
+                    <div class="menu-item-info">
+                        <div class="menu-item-title">
+                            <h3>Escargot à la Bourguignonne</h3>
+                            <span class="price">$16</span>
+                        </div>
+                        <p class="menu-item-desc">Classic French snails in garlic-herb butter sauce</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <div class="section-title">
+                <h2>Main Courses</h2>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e" alt="Coq au Vin">
+                    <div class="menu-item-info">
+                        <div class="menu-item-title">
+                            <h3>Coq au Vin</h3>
+                            <span class="price">$32</span>
+                        </div>
+                        <p class="menu-item-desc">Braised chicken in red wine sauce with pearl onions and mushrooms</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Beef Bourguignon">
+                    <div class="menu-item-info">
+                        <div class="menu-item-title">
+                            <h3>Beef Bourguignon</h3>
+                            <span class="price">$36</span>
+                        </div>
+                        <p class="menu-item-desc">Tender beef braised in red wine with root vegetables and herbs</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <div class="section-title">
+                <h2>Desserts</h2>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814" alt="Crème Brûlée">
+                    <div class="menu-item-info">
+                        <div class="menu-item-title">
+                            <h3>Crème Brûlée</h3>
+                            <span class="price">$14</span>
+                        </div>
+                        <p class="menu-item-desc">Classic vanilla custard with caramelized sugar crust</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9" alt="Chocolate Soufflé">
+                    <div class="menu-item-info">
+                        <div class="menu-item-title">
+                            <h3>Chocolate Soufflé</h3>
+                            <span class="price">$16</span>
+                        </div>
+                        <p class="menu-item-desc">Warm chocolate soufflé served with vanilla ice cream</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
